@@ -1,0 +1,5 @@
+name: MovecraftPAPI
+version: '1.0-SNAPSHOT'
+main: me.vaan.movecraft.MovecraftPAPI
+api-version: '1.20'
+depend: [Movecraft, PlaceholderAPI]
