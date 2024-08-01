@@ -22,8 +22,4 @@ abstract class AbstractMovecraftExpansion : PlaceholderExpansion() {
     override fun canRegister(): Boolean {
         return Bukkit.getPluginManager().getPlugin(requiredPlugin) != null
     }
-
-    override fun persist(): Boolean {
-        return true
-    }
 }
