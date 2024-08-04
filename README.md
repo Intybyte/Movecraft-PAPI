@@ -10,3 +10,5 @@ Needs PlaceholderAPI, and adds various placeholders:
 %movecraft_cruising_direction% : Returns the direction the craft is cruising in.
 %movecraft_burning_fuel% : Returns the amount of fuel currently burning in the craft.
 ```
+
+Now on [eCloud](https://api.extendedclip.com/expansions/movecraftpapi/) thx to PAPI Staff.
