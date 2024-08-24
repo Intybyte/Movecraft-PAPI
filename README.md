@@ -2,7 +2,8 @@
 
 Needs PlaceholderAPI, and adds various placeholders:
 
-```yml
+```
+%movecraft_blocks_on_craft%: Returns the amount of blocks on a craft as a number eg: '1524'
 %movecraft_is_player_cruising% : Returns 'True' if the player is currently cruising on a craft, otherwise returns 'False'.
 %movecraft_craft_name% : Returns the name of the craft the player is currently on."
 %movecraft_craft_speed% : Returns the current speed of the craft if it is cruising. If the craft is not cruising, returns '0'.
