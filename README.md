@@ -3,9 +3,9 @@
 Needs PlaceholderAPI, and adds various placeholders:
 
 ```
-%is_player_pilot%: Returns true if pilot of the craft
-%moveblocks%: Returns the amount of moveblocks on craft as a number eg: '1524'
-%flyblocks%: Returns the flyblocks of moveblocks on craft as a number
+%movecraft_is_player_pilot%: Returns true if pilot of the craft
+%movecraft_moveblocks%: Returns the amount of moveblocks on craft as a number eg: '1524'
+%movecraft_flyblocks%: Returns the flyblocks of moveblocks on craft as a number
 %movecraft_blocks_on_craft%: Returns the amount of blocks on a craft 
 %movecraft_is_player_cruising% : Returns 'True' if the player is currently cruising on a craft, otherwise returns 'False'.
 %movecraft_craft_name% : Returns the name of the craft the player is currently on."
