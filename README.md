@@ -3,7 +3,7 @@
 Needs PlaceholderAPI, and adds various placeholders:
 
 ```
-%is_player_pilot%: Returns true if pilot is
+%is_player_pilot%: Returns true if pilot of the craft
 %moveblocks%: Returns the amount of moveblocks on craft as a number eg: '1524'
 %flyblocks%: Returns the flyblocks of moveblocks on craft as a number
 %movecraft_blocks_on_craft%: Returns the amount of blocks on a craft 
