@@ -41,7 +41,7 @@ class MovecraftExpansion : PlaceholderExpansion() {
 
         when(params) {
             "is_player_pilot" -> {
-                return (craft.pilot == executor).toString().capitalize()
+                return if (craft.pilot == executor) "True" else "False"
             }
 
             "moveblocks" -> {
