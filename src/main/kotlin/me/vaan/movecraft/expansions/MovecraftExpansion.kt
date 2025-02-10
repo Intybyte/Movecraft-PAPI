@@ -3,10 +3,12 @@ package me.vaan.movecraft.expansions
 import me.clip.placeholderapi.expansion.PlaceholderExpansion
 import net.countercraft.movecraft.craft.Craft
 import net.countercraft.movecraft.craft.CraftManager
+import net.countercraft.movecraft.craft.type.RequiredBlockEntry
+import net.countercraft.movecraft.util.Counter
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
-class MovecraftExpansion() : PlaceholderExpansion() {
+class MovecraftExpansion : PlaceholderExpansion() {
 
     override fun getAuthor(): String {
         return "Vaan1310"
@@ -28,16 +30,32 @@ class MovecraftExpansion() : PlaceholderExpansion() {
         return "movecraft"
     }
 
-    override fun onPlaceholderRequest(player: Player?, params: String): String? {
-        player ?: return null
+    override fun onPlaceholderRequest(executor: Player?, params: String): String? {
+        executor ?: return null
 
         val manager = CraftManager.getInstance()
         manager ?: return null
 
-        val craft = manager.getCraftByPlayer(player)
+        val craft = executor.craft
         craft ?: return "Not on craft"
 
         when(params) {
+            "is_player_pilot" -> {
+                return (craft.pilot == executor).toString().capitalize()
+            }
+
+            "moveblocks" -> {
+                val counter: Counter<RequiredBlockEntry> = craft.getDataTag(Craft.MOVEBLOCKS)
+                val sum = counter.keySet.sumOf(counter::get)
+                return sum.toString()
+            }
+
+            "flyblocks" -> {
+                val counter: Counter<RequiredBlockEntry> = craft.getDataTag(Craft.FLYBLOCKS)
+                val sum = counter.keySet.sumOf(counter::get)
+                return sum.toString()
+            }
+
             "blocks_on_craft" ->  {
                 val counter = craft.getDataTag(Craft.MATERIALS)
                 var total = 0
@@ -48,6 +66,7 @@ class MovecraftExpansion() : PlaceholderExpansion() {
 
                 return "$total"
             }
+
             "is_player_cruising" -> return if (craft.cruising) "True" else "False"
             "craft_name" -> return craft.name
             "craft_speed" -> {
@@ -57,6 +76,7 @@ class MovecraftExpansion() : PlaceholderExpansion() {
 
                 return craft.speed.toString()
             }
+
             "craft_current_gear" -> return craft.currentGear.toString()
             "cruising_direction" -> return craft.cruiseDirection.toString()
             "burning_fuel" -> return craft.burningFuel.toString()
