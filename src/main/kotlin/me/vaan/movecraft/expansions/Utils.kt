@@ -7,8 +7,19 @@ import org.bukkit.entity.Player
 val Player.craft get() : PlayerCraft? {
     val pos = this.location
     for (craft in CraftManager.getInstance().getPlayerCraftsInWorld(pos.world)) {
-        if (craft.hitBox.contains(pos.blockX, pos.blockY, pos.blockZ)) {
+        if (craft.pilot == this) {
             return craft
+        }
+
+        val hb = craft.hitBox
+        for (entity in hb.midPoint.toBukkit(craft.world).getNearbyPlayers(
+            hb.xLength / 2.0 + 1,
+            hb.yLength / 2.0 + 2,
+            hb.zLength / 2.0 + 1
+        )) {
+            if (entity == this) {
+                return craft
+            }
         }
     }
 
