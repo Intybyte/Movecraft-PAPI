@@ -15,7 +15,7 @@ class MovecraftExpansion : PlaceholderExpansion() {
     }
 
     override fun getVersion(): String {
-        return "1.0.3"
+        return "1.0.4"
     }
 
     override fun getRequiredPlugin(): String {

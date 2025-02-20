@@ -25,3 +25,12 @@ val Player.craft get() : PlayerCraft? {
 
     return null
 }
+
+fun <T> Iterable<T>.sumOf(produce: (T) -> Number) : Double {
+    var sum = 0.0
+    for (num in this) {
+        sum += produce(num).toDouble()
+    }
+
+    return sum
+}
