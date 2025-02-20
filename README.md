@@ -1,5 +1,8 @@
 ## Movecraft PAPI
 
+Can be downloaded at manually https://api.extendedclip.com/expansions/movecraftpapi/ put it into the expansions folder,
+sometimes when there is an update the plugin won't be avaiable in papi's ecloud, in those cases download it from said link.
+
 Needs PlaceholderAPI, and adds various placeholders:
 
 ```
